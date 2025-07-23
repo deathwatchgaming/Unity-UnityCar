@@ -1,0 +1,358 @@
+"Demo" Scene Setup Steps
+-----------------------------------------------------------------------------------
+
+Description:
+
+Create a Car Controller for your Unity projects using a slightly modified file
+variant from the script files found in the original Unity Documentation
+tutorial: "Car with wheel colliders".
+
+
+Car Controls: 
+-----------------
+
+Car Forward:          W
+Car Reverse:          S
+Car Turn Left:        A
+Car Turn Right:       D
+
+
+
+Manual Setup Instruction:
+-------------------------
+
+
+* Simply follow the instruction for manual setup found below.
+
+
+-----------------------------------------------------------------------------------
+
+
+Prep Step: Create New Scene Called: "Demo_Scene"
+
+Note: if you already have some sort of a test terrain in place, well then, you
+can simple skip the steps: #1 & 2 and go directly to #3.
+
+
+-----------------------------------------------------------------------------------
+
+Step 1: Create: "Environment" (Empty holder) * (for Nicer Organization)
+
+-----------------------------------------------------------------------------------
+
+
+Create Empty: "Environment"
+
+Position: X: 0 Y: 0 Z: 0 
+Rotation: X: 0 Y: 0 Z: 0 
+Scale:    X: 1 Y: 1 Z: 1
+
+Firstly, since this is just a "holder" added for better organization, let us go
+ahead & drag the "Directional Light" into "Environment" holder.
+
+Secondly, since the original tutorial did not focus on a camera or creating
+scripts for such or adding any sort of car camer and rather instead just left
+the default scene camera as is to test out the scripts, we will do the same
+and not focus on the camera so as such we will simply also now let us go
+ahead & drag the "Main Camera" into "Environment" holder.
+
+* also if you wanted you could add a "directory" called Environment and opt to
+  place your TerrainData inside that in its own Dir "TerrainData" and as such
+  any other Environment stuff respectively in as desired the "Environment"
+  directory. This is just a suggestion.
+
+Ie:
+
+Assets/Environment
+Assets/Environment/TerrainData
+
+
+-----------------------------------------------------------------------------------
+
+Step 2: Create: "Terrain"
+
+-----------------------------------------------------------------------------------
+
+
+Create New 3D Object: "Terrain"
+
+Modify via:
+
+"Terrain" Inspector: Terrain Settings
+
+Position: X: -500 Y: 0 Z: -500 
+Rotation: X: 0     Y: 0 Z: 0 
+Scale:    X: 1     Y: 1 Z: 1
+
+We can now opt to clean up for better organization, simply drag the:
+"Terrain" into the holder "Environment" we added for just this exact purpose!
+
+Now, if you like you could opt to rename such "Terrain" to something
+like "Ground" if you like, or just leave such as is ie: "Terrain", such is
+entirely up to you.
+
+Ie:
+
+Assets/Environment/TerrainData/Terrain.asset
+
+
+-----------------------------------------------------------------------------------
+
+Step 3: Prepare: "Car" Model
+
+-----------------------------------------------------------------------------------
+
+
+In editor view the car.fbx model
+
+Ie:
+
+Assets/UnityCar/Models/Car/car.fbx
+
+
+Visit > Car Import Settings > Materials;
+
+
+Note - Do this in correct order (textures first):
+
+1) Firstly, extract the model textures to "Textures" directory *
+
+Ie:
+
+Assets/UnityCar/Models/Car/Textures
+
+2) Secondly, extract the model materials to "Materials" directory *
+
+Ie:
+
+Assets/UnityCar/Models/Car/Materials
+
+
+* Note: This is done if you are say first importing the model and do not yet
+  have the extracted "Textures" and "Materials" in respective directories, or
+  say if you need to do the process over and you want to say delete the
+  existing materials and textures in the provided directories and import the
+  model again extract the textures and materials in the same directories we
+  have used as an example already.
+
+
+-----------------------------------------------------------------------------------
+
+Step 4: Add the car model prefab to the scene: "Car.fbx"
+
+-----------------------------------------------------------------------------------
+
+
+Drag the following model Prefab into the scene: "car.fbx"
+
+
+Position: X: 0 Y: 1.345217 Z: 0 
+Rotation: X: 0 Y: 0 Z: 0 
+Scale:    X: 1 Y: 1 Z: 1
+
+
+Now, in the scene, extract the "Car" prefab completely as we are going to edit
+and re-organize a few things.
+
+
+Rename: "car" to "Car"
+
+
+In "Car" create an "empty" and rename such to "Wheel Meshes"
+
+
+Inside the empty "Wheel Meshes" place all of the wheel meshes (visuals)
+
+Wheel Back Left
+Wheel Back Right
+Wheel Front Left
+Wheel Front Right
+
+
+Ok, now let us make things easier and re-organize such as follows:
+
+In "Wheel Meshes":
+
+Wheel Front Left
+Wheel Front Right
+Wheel Back Left
+Wheel Back Right
+
+
+Ok, now to keep us even more organized, since these are in the "Wheel Meshes"
+holder, let us then add "Mesh" to the naming convention of each wheel just to
+be be more organized and clear:
+
+In "Wheel Meshes":
+
+
+Wheel Front Left Mesh
+Wheel Front Right Mesh
+Wheel Back Left Mesh
+Wheel Back Right Mesh
+
+
+Now let us duplicate "Wheel Meshes" and rename that duplication to: In "Wheel Colliders":
+
+
+Now in "Wheel Colliders" you should have following:
+
+
+Wheel Front Left Mesh
+Wheel Front Right Mesh
+Wheel Back Left Mesh
+Wheel Back Right Mesh
+
+
+We need to edit and rename such follows:
+
+In "Wheel Colliders":
+
+
+Wheel Front Left Collider
+Wheel Front Right Collider
+Wheel Back Left Collider
+Wheel Back Right Collider
+
+
+Ok, hopefully such so far makes sense as to why such is much clearer &
+organized as such so far and is easier to understand what is what if you
+catch my drift.
+
+
+Ok, now go into each wheel in the wheel coliders holder and remove all
+components from such:
+
+ie:
+
+remove the mesh filter
+remove the mesh renderer
+remove the material
+
+
+Also in Transform make sure to "zero out" ie: 0 the -89.98 X Rotation
+
+
+Next, we need to add to each wheel in "Wheel Colliders" holder, a wheel
+collider component and change the radius of each to: 0.44
+
+
+Ok, the reason for this is because we need to factor for the actual model
+wheel size and what one would normally do is go inside the Wheel Meshes
+holder and attach a sphere collider to each wheel mesh to get the radius of
+the wheel mesh and after such remove that speher collider, but, since we
+already know the radius as mentioned in original tutorial for this model we
+can scip that task and just use the radius 0.44 in the wheel collider
+components. Hopefully that make sense.
+
+
+For each wheel collider we need to edit in "Transform" the "Position Y" and
+add "0.15" to the value.
+
+
+For example:
+
+If we have:
+
+Transform Position Y:  -0.9059926 
+
+So adding +0.15 to the value as such: (-0.9059926+0.15)
+
+Such becomes:
+
+Transform Position Y: -0.7559926
+
+Now remember we must do this for all of the wheels in "Wheel Colliders"
+
+Again hopefully that all make sense.
+
+
+
+Next, on: "Car Body"
+
+We need to do the following:
+
+Add Component: Mesh Collider
+Set Convex: True
+
+
+Next, on: "Car"
+
+We need to do the following:
+
+Add Component: Rigidbody
+
+
+-----------------------------------------------------------------------------------
+
+Step 5: Add: Car Control (Script) to "Car", Ie: (CarControl.cs)
+
+-----------------------------------------------------------------------------------
+
+Add: the Car Control (Script) to "Car", Ie: (CarControl.cs)
+
+
+Edit as follows:
+
+
+Wheels:
+
+Element 0:
+
+Wheel Collider:              Wheel Front Left Collider
+Wheel Mesh:                  Wheel Front Left Mesh
+Steerable:                   Yes / True
+Motorized:                   No / False
+
+Element 1:
+
+Wheel Collider:              Wheel Front Right Collider
+Wheel Mesh:                  Wheel Front Right Mesh
+Steerable:                   Yes / True
+Motorized:                   No / False
+
+
+Element 2:
+
+Wheel Collider:              Wheel Back Left Collider
+Wheel Mesh:                  Wheel Back Left Mesh
+Steerable:                   No / False
+Motorized:                   Yes / True
+
+Element 3:
+
+Wheel Collider:              Wheel Back Right Collider
+Wheel Mesh:                  Wheel Back Right Mesh
+Steerable:                   No / False
+Motorized:                   Yes / True
+
+
+Car Properties:
+
+
+Rigid Body Mass:              1500
+Center Of Gravity Offset:     -1
+Motor Torque:                 2000
+Brake Torque:                 2000
+Max Speed:                    20
+Steering Range:               30
+Steering Range At Max Speed:  10
+
+
+-----------------------------------------------------------------------------------
+
+Ok, that should about cover the setup steps!
+
+-----------------------------------------------------------------------------------
+
+
+Lastly, test out the car...
+
+
+To test the car, enter Play mode and use the arrow or WASD keys to move and steer.
+
+
+Now that you have a basic setup, you can try changing different settings to
+observe how they affect the movement of the car. You can also follow these
+instructions with different car models and observe the similarities and
+differences in their setup.
