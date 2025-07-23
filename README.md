@@ -36,15 +36,15 @@ Setup Instructions:
 New Input System Variant(s):
 
 
-* Unity 2021+ & 2022+ Setup: https://github.com/deathwatchgaming/Unity-UnityCar/New_InputSystem/Unity2021-2022/Assets/UnityCar/Documentation/Setup.txt
+* Unity 2021+ & 2022+ Setup: https://github.com/deathwatchgaming/Unity-UnityCar/blob/main/New_InputSystem/Unity2021-2022/Assets/UnityCar/Documentation/Setup.txt
 
-* Unity 6+ Setup: https://github.com/deathwatchgaming/Unity-UnityCar/New_InputSystem/Unity6/Assets/UnityCar/Documentation/Setup.txt
+* Unity 6+ Setup: https://github.com/deathwatchgaming/Unity-UnityCar/blob/main/New_InputSystem/Unity6/Assets/UnityCar/Documentation/Setup.txt
 
 
 Old Input System Variant(s):
 
 
-* Unity 2021+ & 2022+ Setup: https://github.com/deathwatchgaming/Unity-UnityCar/Old_InputSystem/Unity2021-2022/Assets/UnityCar/Documentation/Setup.txt
+* Unity 2021+ & 2022+ Setup: https://github.com/deathwatchgaming/Unity-UnityCar/blob/main/Old_InputSystem/Unity2021-2022/Assets/UnityCar/Documentation/Setup.txt
 
-* Unity 6+ Setup: https://github.com/deathwatchgaming/Unity-UnityCar/Old_InputSystem/Unity6/Assets/UnityCar/Documentation/Setup.txt
+* Unity 6+ Setup: https://github.com/deathwatchgaming/Unity-UnityCar/blob/main/Old_InputSystem/Unity6/Assets/UnityCar/Documentation/Setup.txt
 
