@@ -30,15 +30,15 @@ namespace UnityCar.Scripts
 		[Tooltip("The center of gravity offset amount.")]
 		[SerializeField] private float centerOfGravityOffset = -1f;
 		[Tooltip("The motor torque amount.")]
-	    [SerializeField] private float motorTorque = 2000f;
-	    [Tooltip("The brake torque amount.")]
-	    [SerializeField] private float brakeTorque = 2000f;
-	    [Tooltip("The maximum speed amount.")]
-	    [SerializeField] private float maxSpeed = 20f;
-	    [Tooltip("The steering range amount.")]
-	    [SerializeField] private float steeringRange = 30f;
-	    [Tooltip("The steering range amount at maximum speed.")]
-	    [SerializeField] private float steeringRangeAtMaxSpeed = 10f;
+		[SerializeField] private float motorTorque = 2000f;
+		[Tooltip("The brake torque amount.")]
+		[SerializeField] private float brakeTorque = 2000f;
+		[Tooltip("The maximum speed amount.")]
+		[SerializeField] private float maxSpeed = 20f;
+		[Tooltip("The steering range amount.")]
+		[SerializeField] private float steeringRange = 30f;
+		[Tooltip("The steering range amount at maximum speed.")]
+		[SerializeField] private float steeringRangeAtMaxSpeed = 10f;
 	    
 		private Rigidbody rigidBody;
 		private Vector3 centerOfMass;
@@ -70,10 +70,10 @@ namespace UnityCar.Scripts
 			// Set the rigidbody mass
 			rigidBody.mass = rigidBodyMass;
 
-	        // Adjust center of mass to improve stability and prevent rolling
-	        centerOfMass = rigidBody.centerOfMass;
-	        centerOfMass.y += centerOfGravityOffset;
-	        rigidBody.centerOfMass = centerOfMass;
+			// Adjust center of mass to improve stability and prevent rolling
+			centerOfMass = rigidBody.centerOfMass;
+			centerOfMass.y += centerOfGravityOffset;
+			rigidBody.centerOfMass = centerOfMass;
 		}
 
 		private void OnEnable()
@@ -118,7 +118,7 @@ namespace UnityCar.Scripts
 				// Apply steering to wheels that support steering
 				if (wheel.steerable)
 				{
-	                wheel.wheelCollider.steerAngle = steerInput * currentSteerRange;
+					wheel.wheelCollider.steerAngle = steerInput * currentSteerRange;
 				}
 
 				if (isAccelerating)
