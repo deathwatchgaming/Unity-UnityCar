@@ -192,7 +192,7 @@ Wheel Back Left Mesh
 Wheel Back Right Mesh
 
 
-Now let us duplicate "Wheel Meshes" and rename that duplication to: In "Wheel Colliders":
+Now let us duplicate "Wheel Meshes" and rename that duplication to: "Wheel Colliders"
 
 
 Now in "Wheel Colliders" you should have following:
@@ -240,9 +240,9 @@ collider component and change the radius of each to: 0.44
 Ok, the reason for this is because we need to factor for the actual model
 wheel size and what one would normally do is go inside the Wheel Meshes
 holder and attach a sphere collider to each wheel mesh to get the radius of
-the wheel mesh and after such remove that speher collider, but, since we
+the wheel mesh and after such remove that sphere collider, but, since we
 already know the radius as mentioned in original tutorial for this model we
-can scip that task and just use the radius 0.44 in the wheel collider
+can skip that task and just use the radius 0.44 in the wheel collider
 components. Hopefully that make sense.
 
 
