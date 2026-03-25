@@ -15,7 +15,7 @@ Car Forward:          W
 Car Reverse:          S
 Car Turn Left:        A
 Car Turn Right:       D
-
+Car Brake:            Space
 
 
 Manual Setup Instruction:
