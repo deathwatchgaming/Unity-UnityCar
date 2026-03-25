@@ -55,6 +55,7 @@ namespace UnityCar.Scripts
 		private float currentMotorTorque;
 		private float currentSteerRange;
 		private bool isAccelerating;
+		private bool isBrakingKey;
 
 		private void Awake()
 		{
@@ -89,6 +90,9 @@ namespace UnityCar.Scripts
 		// Update is called every frame
 		private void Update()
 		{
+			// Check braking key value
+			isBrakingKey = carControls.Car.Brake.IsPressed();
+
 			UpdateWheels();
 		}
 
@@ -129,8 +133,20 @@ namespace UnityCar.Scripts
 						wheel.wheelCollider.motorTorque = motorInput * currentMotorTorque;
 					}
 
-					// Release brakes when accelerating
-					wheel.wheelCollider.brakeTorque = 0f;
+					// Apply braking if brake key is pressed
+					if (isBrakingKey)
+					{
+						// Apply brakes
+						wheel.wheelCollider.motorTorque = 0f;
+						wheel.wheelCollider.brakeTorque = Mathf.Abs(motorInput) * brakeTorque;
+					}
+
+					else
+					{
+						// Release brakes when accelerating
+						wheel.wheelCollider.brakeTorque = 0f;
+					}
+										
  				}
 
  				else 
