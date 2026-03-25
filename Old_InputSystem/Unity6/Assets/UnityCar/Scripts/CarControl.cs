@@ -108,8 +108,19 @@ namespace UnityCar.Scripts
 						wheel.wheelCollider.motorTorque = motorInput * currentMotorTorque;
 					}
 
-					// Release brakes when accelerating
-					wheel.wheelCollider.brakeTorque = 0f;
+					// Apply brakes when brake key is applied
+					if (Input.GetKey("KeyCode.Space"))
+					{
+						// Apply brakes
+						wheel.wheelCollider.motorTorque = 0f;
+						wheel.wheelCollider.brakeTorque = Mathf.Abs(motorInput) * brakeTorque;
+					}
+
+					else
+					{
+						// Release brakes when accelerating
+						wheel.wheelCollider.brakeTorque = 0f;
+					}										
  				}
 
  				else 
