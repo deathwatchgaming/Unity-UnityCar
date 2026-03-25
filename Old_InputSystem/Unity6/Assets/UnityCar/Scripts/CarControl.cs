@@ -109,7 +109,7 @@ namespace UnityCar.Scripts
 					}
 
 					// Apply brakes when brake key is applied
-					if (Input.GetKey("KeyCode.Space"))
+					if (Input.GetKey(KeyCode.Space))
 					{
 						// Apply brakes
 						wheel.wheelCollider.motorTorque = 0f;
