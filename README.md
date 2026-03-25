@@ -27,6 +27,7 @@ Car Controls:
 * Car Reverse:          S
 * Car Turn Left:        A
 * Car Turn Right:       D
+* Car Brake:            Space
 
 
 Setup Instructions:
