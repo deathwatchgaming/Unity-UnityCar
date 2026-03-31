@@ -19,6 +19,8 @@ Note: (This repository directory here as noted above in the description is merel
 ![Preview](https://raw.githubusercontent.com/deathwatchgaming/Unity-UnityCar/refs/heads/main/Previews/GameViewTab_Example.png)
 
 
+![Preview](https://raw.githubusercontent.com/deathwatchgaming/Unity-UnityCar/refs/heads/main/Previews/CarCameraScript_Editor_Example.png)
+
 
 Car Controls:
 -------------
