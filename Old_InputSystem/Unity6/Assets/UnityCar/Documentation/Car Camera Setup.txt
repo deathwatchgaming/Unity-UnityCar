@@ -1,0 +1,99 @@
+----------------------------
+UnityCar Car Camera: Setup |
+----------------------------
+
+
+Description: A simple camera script for "UnityCar" and steps to add / setup such.
+
+
+----------
+Step: 1) |
+----------
+
+
+Create > "Empty" > "GameObject" in "Car" object.
+
+
+Transform: 
+----------
+
+Set: (For Example)
+
+X: 0  Y: 0  Z: 0
+X: 0  Y: 0  Z: 0 
+X: 1  Y: 1  Z: 1 
+
+
+Rename > "Empty" > "GameObject" to "Car Camera Root" for now, for example, else something you desire later.
+
+Suggested: If desired, you could rename to > "Car Camera" just for example.
+
+
+----------
+Step: 2) |
+----------
+
+
+In >  "Car Camera Root" > create a camera: "Camera"
+
+
+Transform: 
+----------
+
+Set: (For Example)
+
+X: 0  Y: 0.32  Z: -6.2 
+X: 0  Y: 0  Z: 0 
+X: 1  Y: 1  Z: 1 
+
+
+Rename > "Camera" > to "Car Camera" for now, for example, else something you desire later.
+
+Suggested: If desired, you could rename to > "Car Cam" just for example.
+
+
+----------
+Step: 3) |
+----------
+
+
+Add Script > "CarCamera.cs" to "Car Camera Root" holder.*
+
+
+Set resources: ("For Example")*
+-------------------------------
+
+Car Rigidbody: Car (Rigidbody)
+Car Transform: Car (Transform)
+Camera Root: Car Camera Root(Transform)
+Camera Transform: Car Camera (Transform)
+
+
+Else, Suggested: If desired, you could rename as below:
+
+
+Set resources: ("For Example")*
+-------------------------------
+
+Car Rigidbody: Car (Rigidbody)
+Car Transform: Car (Transform)
+Camera Root: Car Camera (Transform)
+Camera Transform: Car Cam (Transform)
+
+
+Settings: (Default - Tweak such to your needs) 
+----------------------------------------------
+
+Rotation Threshold: 0.1
+Rotation Speed: 5
+Distance: 10
+Height: 2
+Rotation Damping: 3
+Height Damping: 2
+
+
+That is it! Tweak such to your likings and enjoy!
+
+
+Tip: you can also then perhaps opt to make the "Camera Root" a prefab
+and would do such firstly before then say opting to make "Car" object a prefab ie:"Car".
