@@ -36,6 +36,8 @@ Step: 2) |
 
 In >  "Car Camera Root" > create a camera: "Camera"
 
+Set tag as: "MainCamera"
+
 
 Transform: 
 ----------
