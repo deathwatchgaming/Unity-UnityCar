@@ -86,7 +86,7 @@ Camera Transform: Car Cam (Transform)
 Settings: (Default - Tweak such to your needs) 
 ----------------------------------------------
 
-Rotation Threshold: 0.1
+Rotation Threshold: 1
 Rotation Speed: 5
 Distance: 10
 Height: 2

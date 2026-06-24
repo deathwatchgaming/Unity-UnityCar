@@ -5,6 +5,9 @@
  * License: MIT
  */
 
+// This script is responsible for controlling the car's movement, steering, and braking using the new Unity Input System. It handles the physics of the car through WheelColliders and updates the visual representation of the wheels accordingly.
+
+// Using directives
 using System;
 using UnityEngine;
 using System.Collections.Generic;
@@ -13,50 +16,70 @@ namespace UnityCar.Scripts
 {
 	public class CarControl : MonoBehaviour
 	{
+		// Serializable struct to hold wheel information
 		[Serializable]
 		public struct Wheel
 		{
+			[Tooltip("The WheelCollider component that handles the physics of the wheel.")]
+			// The WheelCollider component that handles the physics of the wheel.
 			public WheelCollider wheelCollider;
+			[Tooltip("The transform of the wheel mesh, used for visual representation.")]
+			// The transform of the wheel mesh, used for visual representation.
 			public Transform wheelMesh;
+			[Tooltip("Indicates if the wheel is steerable.")]
+			// Indicates if the wheel is steerable.
 			public bool steerable;
+			[Tooltip("Indicates if the wheel is motorized.")]
+			// Indicates if the wheel is motorized.
 			public bool motorized;
 		}
 
+		// List of wheels for the car, initialized with 4 wheels
 		[SerializeField] private List<Wheel> wheels = new List<Wheel>(new Wheel[4]);
 
 		[Header("Car Properties")]
 		[Tooltip("The rigidbody mass amount.")]
+		// The mass of the car's rigidbody, which affects its physics behavior.
 		[SerializeField] private float rigidBodyMass = 1500f;
 		[Tooltip("The center of gravity offset amount.")]
+		// The offset for the center of gravity, which affects the car's stability and handling.
 		[SerializeField] private float centerOfGravityOffset = -1f;
 		[Tooltip("The motor torque amount.")]
+		// The torque applied to the wheels for acceleration, which affects the car's speed and performance.
 		[SerializeField] private float motorTorque = 2000f;
 		[Tooltip("The brake torque amount.")]
+		// The torque applied to the wheels for braking, which affects the car's stopping power.
 		[SerializeField] private float brakeTorque = 2000f;
 		[Tooltip("The maximum speed amount.")]
+		// The maximum speed the car can reach, which affects its top-end performance.
 		[SerializeField] private float maxSpeed = 20f;
 		[Tooltip("The steering range amount.")]
+		// The range of steering angles for the wheels, which affects the car's turning radius and handling.
 		[SerializeField] private float steeringRange = 30f;
 		[Tooltip("The steering range amount at maximum speed.")]
+		// The range of steering angles for the wheels at maximum speed, which affects the car's handling at high speeds.
 		[SerializeField] private float steeringRangeAtMaxSpeed = 10f;
+
+		// Private variables for internal use
 	    
-		private Rigidbody rigidBody;
-		private Vector3 centerOfMass;
-		private Vector3 wheelPosition;
-		private Quaternion wheelRotation;
+		private Rigidbody rigidBody; // Reference to the car's Rigidbody component for physics calculations
+		private Vector3 centerOfMass; // The center of mass of the car, used to improve stability and prevent rolling
+		private Vector3 wheelPosition; // The position of the wheel mesh, used for visual representation
+		private Quaternion wheelRotation; // The rotation of the wheel mesh, used for visual representation
 
 		private CarInputActions carControls; // Reference to the new input system
-		private Vector2 inputVector;	
+		private Vector2 inputVector; // The input vector from the new input system, representing player input for movement and steering	 
 		
-		private float motorInput;
-		private float steerInput;
-		private float forwardSpeed;
-		private float speedFactor;
-		private float currentMotorTorque;
-		private float currentSteerRange;
-		private bool isAccelerating;
-		private bool isBrakingKey;
+		private float motorInput; // The input value for motor torque, representing player input for acceleration and braking
+		private float steerInput; // The input value for steering, representing player input for turning the car
+		private float forwardSpeed; // The current speed of the car along its forward axis, used to adjust motor torque and steering range based on speed
+		private float speedFactor; // A normalized value representing the car's speed relative to its maximum speed, used to adjust motor torque and steering range based on speed
+		private float currentMotorTorque; // The current motor torque applied to the wheels, adjusted based on the car's speed and player input
+		private float currentSteerRange; // The current steering range applied to the wheels, adjusted based on the car's speed and player input
+		private bool isAccelerating; // A flag indicating whether the player is accelerating or trying to reverse, used to determine how to apply motor torque and braking
+		private bool isBrakingKey; // A flag indicating whether the player is pressing the brake key, used to determine how to apply braking torque to the wheels
 
+		// Awake is called when the script instance is being loaded
 		private void Awake()
 		{
 			carControls = new CarInputActions(); // Initialize Input Actions				
@@ -77,11 +100,13 @@ namespace UnityCar.Scripts
 			rigidBody.centerOfMass = centerOfMass;
 		}
 
+		// Enable the input actions when the script is enabled
 		private void OnEnable()
 		{
 			carControls.Enable();
 		}
 
+		// Disable the input actions when the script is disabled
 		private void OnDisable()
 		{
 			carControls.Disable();
@@ -117,6 +142,7 @@ namespace UnityCar.Scripts
 			// Determine if the player is accelerating or trying to reverse
 			isAccelerating = Mathf.Sign(motorInput) == Mathf.Sign(forwardSpeed);
 
+			// Apply motor torque, steering and braking to the wheels
 			foreach (var wheel in wheels)
 			{
 				// Apply steering to wheels that support steering
@@ -125,6 +151,7 @@ namespace UnityCar.Scripts
 					wheel.wheelCollider.steerAngle = steerInput * currentSteerRange;
 				}
 
+				// Apply motor torque and braking to wheels that support motorization
 				if (isAccelerating)
 				{
 					// Apply torque to motorized wheels
@@ -160,6 +187,7 @@ namespace UnityCar.Scripts
 		// Update the wheel visuals
 		private void UpdateWheels()
 		{
+			// Update the position and rotation of each wheel mesh based on the corresponding WheelCollider
 			foreach (var wheel in wheels)
 			{
 				// Get the Wheel collider's world pose values and
