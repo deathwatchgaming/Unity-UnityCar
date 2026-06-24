@@ -5,7 +5,7 @@
  * License: MIT
  */
 
-// This script is responsible for controlling the car's movement, steering, and braking based on player input.
+// This script is responsible for controlling the car's movement, steering, and braking using the new Unity Input System. It handles the physics of the car through WheelColliders and updates the visual representation of the wheels accordingly.
 
 // Using directives
 using System;
