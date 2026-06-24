@@ -95,9 +95,9 @@ namespace UnityCar.Scripts
 			rigidBody.mass = rigidBodyMass;
 
 			// Adjust center of mass to improve stability and prevent rolling
-			centerOfMass = rigidBody.centerOfMass;
-			centerOfMass.y += centerOfGravityOffset;
-			rigidBody.centerOfMass = centerOfMass;
+			centerOfMass = rigidBody.centerOfMass; // Get the current center of mass
+			centerOfMass.y += centerOfGravityOffset; // Adjust the center of mass downward to improve stability
+			rigidBody.centerOfMass = centerOfMass; // Set the new center of mass for the rigidbody
 		}
 
 		// Enable the input actions when the script is enabled
