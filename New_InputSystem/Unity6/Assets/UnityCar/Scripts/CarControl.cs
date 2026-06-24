@@ -118,6 +118,7 @@ namespace UnityCar.Scripts
 			// Check braking button value
 			isBrakingKey = carControls.Car.Brake.IsPressed();
 
+			// Update the wheel visuals to match the physics simulation
 			UpdateWheels();
 		}
 
