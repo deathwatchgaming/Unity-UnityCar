@@ -20,11 +20,13 @@ Note: (This repository directory here as noted above in the description is merel
 
 Optional Camera scripts:
 
-CarCamera.cs
+CarCamera.cs:
+
 ![Preview](https://raw.githubusercontent.com/deathwatchgaming/Unity-UnityCar/refs/heads/main/Previews/CarCameraScript_Editor_Example.png)
 
-CarCameraPlus.cs
-![Preview](https://raw.githubusercontent.com/deathwatchgaming/Unity-UnityCar/refs/heads/main/Previews/CarCameraPlusScript_Editor_Example(New Input).png)
+CarCameraPlus.cs:
+
+![Preview](https://raw.githubusercontent.com/deathwatchgaming/Unity-UnityCar/refs/heads/main/Previews/CarCameraPlusScript_Editor_Example(New%20Input).png)
 
 
 ![Preview](https://raw.githubusercontent.com/deathwatchgaming/Unity-UnityCar/refs/heads/main/Previews/DemoScene_Heirarchy_Example_wCarCamera.png)
