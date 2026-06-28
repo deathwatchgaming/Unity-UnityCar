@@ -1,11 +1,17 @@
-----------------------------
-UnityCar Car Camera: Setup |
-----------------------------
+---------------------------------
+UnityCar Car Camera Plus: Setup |
+---------------------------------
 
 
-Description: A simple camera script for "UnityCar" and steps to add / setup such.
+Description: A simple enhanced camera script for "UnityCar" and steps to add / setup such.
 
-This camera script is responsible for controlling the camera that follows the car. It uses the car's velocity to determine the camera's rotation and position. The camera will smoothly follow the car and rotate to match the car's velocity vector. If the car is not moving, the camera will default to looking forward.
+This camera script provides a dual-mode camera (Follow + Orbit) with robust anti-clipping, mode transition safety, 
+and full support for both cursor locked and unlocked states.
+
+
+Note: If you were previously using The "CarCamera.cs" script, you can either disable or remove that component and use this "CarCameraPlus.cs" script instead if you desire using such for a more enhanced camera experience.
+
+If using this "CarCameraPlus.cs" script instead....
 
 
 ----------
@@ -61,7 +67,7 @@ Step: 3) |
 ----------
 
 
-Add Script > "CarCamera.cs" to "Car Camera Root" holder.*
+Add Script > "CarCameraPlus.cs" to "Car Camera Root" holder.*
 
 
 Set resources: ("For Example")*
@@ -85,6 +91,12 @@ Camera Root: Car Camera (Transform)
 Camera Transform: Car Cam (Transform)
 
 
+Set the input actions asset:
+----------------------------
+
+Input Actions: CarCamPlusInputActions (Input Action Asset)
+
+
 Settings: (Default - Tweak such to your needs) 
 ----------------------------------------------
 
@@ -94,6 +106,8 @@ Distance: 10
 Height: 2
 Rotation Damping: 3
 Height Damping: 2
+......
+.......
 
 
 That is it! Tweak such to your likings and enjoy!

@@ -5,6 +5,8 @@ UnityCar Car Camera: Setup |
 
 Description: A simple camera script for "UnityCar" and steps to add / setup such.
 
+This camera script is responsible for controlling the camera that follows the car. It uses the car's velocity to determine the camera's rotation and position. The camera will smoothly follow the car and rotate to match the car's velocity vector. If the car is not moving, the camera will default to looking forward.
+
 
 ----------
 Step: 1) |

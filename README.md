@@ -48,9 +48,26 @@ Car Setup:
 
 Car Camera Setup:
 
+Car Camera: (optional usage - this or the other or none is up to you)
+
+ This camera script is responsible for controlling the camera that follows the car. It uses the car's velocity to determine the camera's rotation and position. The camera will smoothly follow the car and rotate to match the car's velocity vector. If the car is not moving, the camera will default to looking forward.
+
+
 * Unity 2021+ & 2022+ Setup: https://github.com/deathwatchgaming/Unity-UnityCar/blob/main/New_InputSystem/Unity2021-2022/Assets/UnityCar/Documentation/CarCameraSetup.txt
 
 * Unity 6+ Setup: https://github.com/deathwatchgaming/Unity-UnityCar/blob/main/New_InputSystem/Unity6/Assets/UnityCar/Documentation/CarCameraSetup.txt
+
+
+
+Car Camera Plus: (optional usage - this or the other or none is up to you) 
+
+ This camera script provides a dual-mode camera (Follow + Orbit) with robust anti-clipping, mode transition safety, and full support for both cursor locked and unlocked states.
+
+
+* Unity 2021+ & 2022+ Setup: https://github.com/deathwatchgaming/Unity-UnityCar/blob/main/New_InputSystem/Unity2021-2022/Assets/UnityCar/Documentation/CarCameraPlusSetup.txt
+
+* Unity 6+ Setup: https://github.com/deathwatchgaming/Unity-UnityCar/blob/main/New_InputSystem/Unity6/Assets/UnityCar/Documentation/CarCameraPlusSetup.txt
+
 
 
 Old Input System Variant(s):

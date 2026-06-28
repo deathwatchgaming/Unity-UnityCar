@@ -1,0 +1,55 @@
+{
+    "version": 1,
+    "name": "CarCamPlusInputActions",
+    "maps": [
+        {
+            "name": "Camera",
+            "id": "3a393b15-7b6e-4bfd-93b0-ae34a7bae998",
+            "actions": [
+                {
+                    "name": "ToggleCameraMode",
+                    "type": "Button",
+                    "id": "e7ad816f-b67c-46c7-a2d3-e5e539ad80f9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Look",
+                    "type": "Value",
+                    "id": "974e6d4f-7fc6-4086-913d-abf3ee9304b9",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d2756a8f-06dc-4f05-bb87-c946f161420c",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleCameraMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "62b4b923-562a-42b5-8bf1-d6c9f1d1ed46",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
