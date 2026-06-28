@@ -7,6 +7,9 @@ Description: A simple camera script for "UnityCar" and steps to add / setup such
 
 This camera script is responsible for controlling the camera that follows the car. It uses the car's velocity to determine the camera's rotation and position. The camera will smoothly follow the car and rotate to match the car's velocity vector. If the car is not moving, the camera will default to looking forward.
 
+Note: If you were previously using this "CarCamera.cs" script or still desire to use such, you can either keep using such of course, else if you opt to instead use the optional other camera script provided then you would disable or remove the component for this one and use the "CarCameraPlus.cs" script instead if you desire using such for a more enhanced camera experience.
+
+If using this "CarCamera.cs" script...
 
 ----------
 Step: 1) |
