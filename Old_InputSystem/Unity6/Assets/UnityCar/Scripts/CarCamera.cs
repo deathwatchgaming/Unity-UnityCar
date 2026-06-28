@@ -31,7 +31,7 @@ namespace UnityCar.Scripts
         [Header("Settings")]
         [Tooltip("If car speed is below this value, then the camera will default to looking forward.")]
         // The threshold below which the camera will default to looking forward instead of following the car's velocity vector, preventing erratic camera behavior at low speeds.
-        [SerializeField] private float rotationThreshold = 0.1f;
+        [SerializeField] private float rotationThreshold = 1f;
         [Tooltip("How closely the camera matches the car's velocity vector. The lower the value, the smoother the camera rotations, but too much results in not being able to see where you're going.")]
         // The speed at which the camera rotates to match the car's velocity vector, allowing for smooth transitions in camera orientation based on the car's movement.
         [SerializeField] private float rotationSpeed = 5.0f;

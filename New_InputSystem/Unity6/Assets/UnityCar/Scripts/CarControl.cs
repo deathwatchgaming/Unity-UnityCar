@@ -182,6 +182,13 @@ namespace UnityCar.Scripts
 					wheel.wheelCollider.motorTorque = 0f;
 					wheel.wheelCollider.brakeTorque = Mathf.Abs(motorInput) * brakeTorque;
  				}
+
+				// Apply braking when brake key is pressed and no movement input (neutral)
+				if (isBrakingKey && Mathf.Approximately(motorInput, 0f))
+				{
+					wheel.wheelCollider.motorTorque = 0f;
+					wheel.wheelCollider.brakeTorque = brakeTorque;
+				}				
  			}
 		}
 
