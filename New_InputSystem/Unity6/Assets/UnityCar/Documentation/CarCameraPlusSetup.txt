@@ -8,6 +8,8 @@ Description: A simple enhanced camera script for "UnityCar" and steps to add / s
 This camera script provides a dual-mode camera (Follow + Orbit) with robust anti-clipping, mode transition safety, 
 and full support for both cursor locked and unlocked states.
 
+Keyboard: C key to switch camera mode
+Mouse: for movement / rotation
 
 Note: If you were previously using The "CarCamera.cs" script, you can either disable or remove that component and use this "CarCameraPlus.cs" script instead if you desire using such for a more enhanced camera experience.
 
