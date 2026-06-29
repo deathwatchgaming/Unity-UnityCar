@@ -49,7 +49,7 @@ New Input System Variant(s) Setup Instructions:
 
 Car Setup:
 
-This script is responsible for controlling the car's movement, steering, and braking using the new Unity Input System. It handles the physics of the car through WheelColliders and updates the visual representation of the wheels accordingly.
+This car conmtrol script is responsible for controlling the car's movement, steering, and braking using the new Unity Input System. It handles the physics of the car through WheelColliders and updates the visual representation of the wheels accordingly.
 
 
 * Unity 2021+ & 2022+ Setup: https://github.com/deathwatchgaming/Unity-UnityCar/blob/main/New_InputSystem/Unity2021-2022/Assets/UnityCar/Documentation/CarSetup.txt
@@ -85,7 +85,7 @@ Old Input System Variant(s) Setup Instructions:
 
 Car Setup:
 
-This script is responsible for controlling the car's movement, steering, and braking using the Unity "Legacy" Old Input System. It handles the physics of the car through WheelColliders and updates the visual representation of the wheels accordingly.
+This car control script is responsible for controlling the car's movement, steering, and braking using the Unity "Legacy" Old Input System. It handles the physics of the car through WheelColliders and updates the visual representation of the wheels accordingly.
 
 
 * Unity 2021+ & 2022+ Setup: https://github.com/deathwatchgaming/Unity-UnityCar/blob/main/Old_InputSystem/Unity2021-2022/Assets/UnityCar/Documentation/CarSetup.txt
