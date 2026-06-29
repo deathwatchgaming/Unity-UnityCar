@@ -1,11 +1,11 @@
 # Unity-UnityCar
 
-Just some very minor edits to the existing CarControl.cs script in: Unity 6 docs - "Car with wheel colliders tutorial" simply for things like adding pub struct to list so as to combine the CarControl and Wheels files into one just for example and then to provide scripts variants for both old and new input and provide variants of such for Unity 6 and also 2021-22
+This originally was just some very minor edits to the existing CarControl.cs script in: Unity 6 docs - "Car with wheel colliders tutorial" simply for things like adding pub struct to list so as to combine the CarControl and Wheels files into one just for example and then to provide scripts variants for both old and new input and provide variants of such for Unity 6 and also 2021-22 and that remains the original intent with so far only few further changes added further over time for example now expanding slightly by adding further braking functionalities and two optional camera scripts, etc...
 
 
 Original Unity Tutorial: "Create a car with Wheel colliders": https://docs.unity3d.com/6000.0/Documentation/Manual/WheelColliderTutorial.html 
 
-Note: (This repository directory here as noted above in the description is merely some files from such tutorial mildly edited)
+Note: (This repository directory here as noted above in the description was originally just merely some files from such tutorial mildly edited, though now has expanded slightly by adding further braking functionalities and two optional camera scripts)
 
 
 ![Preview](https://raw.githubusercontent.com/deathwatchgaming/Unity-UnityCar/refs/heads/main/Previews/CarControlScript_Editor_Example.png)
