@@ -42,11 +42,10 @@ Car Controls:
 * Car Brake:            Space
 
 
-Setup Instructions:
--------------------
 
 
-New Input System Variant(s):
+New Input System Variant(s) Setup Instructions:
+-----------------------------------------------
 
 Car Setup:
 
@@ -81,7 +80,8 @@ Car Camera Plus: (optional usage - this or the other or none is up to you)
 
 
 
-Old Input System Variant(s):
+Old Input System Variant(s) Setup Instructions:
+-----------------------------------------------
 
 Car Setup:
 
